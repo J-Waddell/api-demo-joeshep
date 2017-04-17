@@ -7,7 +7,7 @@
     "start": "nodemon bin/tv_faves",
     "test": "mocha --recursive --watch -R list"
   },
-  "engines": { 
+  "engines": {
     "node": "7.3.0"
   },
   "dependencies": {
@@ -19,12 +19,26 @@
     "knex": "^0.12.9",
     "morgan": "~1.7.0",
     "pg": "^6.1.2",
-    "pug": "~2.0.0-beta10",
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "mocha": "^2.4.5"
-  }
+  },
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-Waddell/api-demo-joeshep.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-Waddell/api-demo-joeshep/issues"
+  },
+  "homepage": "https://github.com/J-Waddell/api-demo-joeshep#readme",
+  "description": ""
 }
