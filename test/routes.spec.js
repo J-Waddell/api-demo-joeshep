@@ -66,4 +66,24 @@ describe('POST /api/v1/shows/new', () => {
     })
 })
 
+describe('DELETE /api/v1/:id', () => {
+    it('Should delete a show', () => {
+        return chai.request(server)
+        .delete('/api/v1/shows/1')
+        .then( (res) => {
+            res.should.have.status(202)
+            res.should.be.json
+            res.body.should.be.a('object')
+
+            chai.request(server)
+            .get('/api/v1/shows')
+            .then( (res) => {
+                console.log("Is this even happening")
+                
+            })
+        })
+
+    })
+})
+
 })
