@@ -32,6 +32,17 @@ module.exports.addShow = ({body}, res, next) => {
     })
 }
 
+module.exports.deleteShow = ({params: {id}}, res, next) => {
+    Show.forge({id})
+    .destroy()
+    .then( (show) => {
+        res.status(202).json(show);
+    })
+    .catch( (err) => {
+        next(err);
+      });
+    };
+
 module.exports.getShowFaves = ({query: {showId}}, res, next) => {
     console.log("The query string", showId)
     Show.forge({id: showId})
