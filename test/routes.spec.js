@@ -47,4 +47,23 @@ describe('Shows routes', () => {
             })
         })
     })
+
+describe('POST /api/v1/shows/new', () => {
+    it('Should add a new obj to the db', () => {
+        return chai.request(server)
+        .post('/api/v1/shows/new')
+        .send({
+            name: 'The Simpsons',
+            channel: 'Fox',
+            genre: 'Animation',
+            inProduction: true
+        })
+        .then( (res) => {
+            res.should.have.status(201)
+            res.should.be.json
+            res.should.be.a('object')
+        })
+    })
+})
+
 })

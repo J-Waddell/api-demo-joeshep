@@ -23,6 +23,15 @@ module.exports.getShow = ({params: {id}}, res, next) => {
     })
 }
 
+module.exports.addShow = ({body}, res, next) => {
+    Show.forge(body)
+    .save()
+    .then( () => res.status(201).json({"msg": "Nice POST breh"}))
+    .catch( (error) => {
+        next(err)
+    })
+}
+
 module.exports.getShowFaves = ({query: {showId}}, res, next) => {
     console.log("The query string", showId)
     Show.forge({id: showId})
