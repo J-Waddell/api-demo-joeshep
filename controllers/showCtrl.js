@@ -13,6 +13,16 @@ module.exports.getShows = (req, res, next) => {
     })
 }
 
+module.exports.getShow = ({params: {id}}, res, next) => {
+    Show.getSingleShow(id)
+    .then( (show) => {
+        res.status(200).json(show)
+    })
+    .catch( (error) => {
+        next(error)
+    })
+}
+
 module.exports.getShowFaves = ({query: {showId}}, res, next) => {
     console.log("The query string", showId)
     Show.forge({id: showId})

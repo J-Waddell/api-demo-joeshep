@@ -17,6 +17,16 @@ const Show = bookshelf.Model.extend({
         .catch ( (error) => {
             return error
         })
+    },
+    getSingleShow: function(id) {
+        return this.forge({id})
+        .fetch()
+        .then( (show) => {
+            return show
+        })
+        .catch( (error) => {
+            return error
+        })
     }
 })
 
