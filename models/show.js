@@ -5,7 +5,7 @@ require('./favorite')
 require('./director')
 require('./show_director')
 
-const Show = bookshelf.Model.extend(({
+const Show = bookshelf.Model.extend({
     tableName: 'shows',
     upvotes: function(){ return this.hasMany('Favorite')},
     directors: function(){ return this.belongsToMany('Director').through('Show_Director')}
