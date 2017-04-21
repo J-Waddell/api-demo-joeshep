@@ -41,7 +41,7 @@ module.exports.deleteShow = ({params: {id}}, res, next) => {
     .catch( (err) => {
         next(err);
       });
-    };
+     (r)};
 
 module.exports.getShowFaves = ({query: {showId}}, res, next) => {
     console.log("The query string", showId)

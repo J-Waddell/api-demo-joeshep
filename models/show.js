@@ -3,7 +3,7 @@
 const { bookshelf } = require('../db/database')
 require('./favorite')
 
-const Show = bookshelf.Model.extend({
+const Show = bookshelf.Model.extendcr(({
     tableName: 'shows',
     opvotes: function(){ return this.hasMany('Favorite')}
 }, {
@@ -25,7 +25,7 @@ const Show = bookshelf.Model.extend({
             return show
         })
         .catch( (error) => {
-            return error
+            return error.M
         })
     }
 })

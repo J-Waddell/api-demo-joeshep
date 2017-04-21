@@ -2,7 +2,7 @@
 // $ knex seed:make shows_seed --env development.
 // knex knows to put it in the db folder (?)
 
-// Then seeded the db with 
+// Then seeded the db with
 // $ knex seed:run --env development
 
 exports.seed = function(knex, Promise) {
